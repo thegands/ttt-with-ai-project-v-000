@@ -21,9 +21,9 @@ class Player::Computer < Player
 
   def corner(board)
     corners = ["1", "3", "7", "9"]
-    corners_taken = corners.map { |corner_value| board.taken?(corner_value) }
-    if corners_taken.include?(false)
-      corners[corners_taken.index(false)]
+    available_corner = corners.index { |corner_value| !board.taken?(corner_value) }
+    if available_corner
+      corners[available_corner]
     else
       false
     end

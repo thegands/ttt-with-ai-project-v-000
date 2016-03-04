@@ -21,7 +21,7 @@ class Game
   end
 
   def over?
-    won? || draw? || full?
+    won? || draw?
   end
 
   def won?
